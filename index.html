@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>Site One page</title>
+        <meta name="author" lang="fr" content="Günther Debay">
+        <meta name="description" content="Ceci est un projet">
+        <meta name="keywords" content="CV,One page,html,css,C,C#,JAVA,Javascript">
+        <meta name="generator" content="komodo-edit">
+        <script type="text/javascript" src="jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="jquery.scrollTo.js"></script>
+        <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css" type="text/css" />
+        <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+            
+            
+            
+ <script>
+           
+    /* permet le scroll sur une ancre */ 
+         
+         $(document).ready(function(){       
+
+var $root = $('html, body');
+$('a').click(function() {
+    var href = $.attr(this, 'href');
+    $root.animate({
+        scrollTop: $(href).offset().top
+    }, 500, function () {
+        window.location.hash = href;
+    });
+    return false;
+});
+
+
+
+
+$(document).ready(function() {
+			$(".fancybox").fancybox();
+		});
+         });
+         
+ /* PERMET AFFICHER LES BARRES DE COMPETENCES */
+ function afficher_barre() {
+            for(x=1;x<9;x++){
+               var labelValue=[0,750,700,750,820,450,1000,700,600];
+              
+            
+            $('#barre'+x).stop().animate({width:(labelValue[x]/2)+"px"});
+            
+           
+            
+            }
+         }
+          function cacher_barre() {
+            for(y=1;y<9;y++){
+            $('#barre'+y).stop().animate({width:"0px"});
+            }
+            }
+         
+        $(document).ready(function () { $(window).scroll
+        (function(){if ($(window).scrollTop() >= 626)
+	{afficher_barre();}	
+	else if ($(window).scrollTop() < 626)
+        {cacher_barre();}});});
+
+        
+        
+        
+        
+                
+/* PERMET LE SWITCH IMAGE DE P3 */
+var arr = [];
+arr[0]= new Image();
+arr[0].src = "Images/ImagesChanger/1.PNG";
+arr[1]= new Image();
+arr[1].src = "Images/ImagesChanger/2.PNG";
+arr[2]= new Image();
+arr[2].src = "Images/ImagesChanger/3.PNG";
+arr[3]= new Image();
+arr[3].src = "Images/ImagesChanger/4.PNG";
+arr[4]= new Image();
+arr[4].src = "Images/ImagesChanger/5.PNG";
+arr[5]= new Image();
+arr[5].src = "Images/ImagesChanger/6.jpg";
+var i=0;
+function slide(){
+ document.getElementById("image1").src= arr[i].src;
+ i++;
+ if(i==arr.length){
+  i=0;
+ }
+ setTimeout(function(){ slide(); },2000);
+}
+
+
+</script>
+            
+            
+      
+</head>
+<body onload =slide('imge,arr')>
+    <div id="Acceuil"></div>
+    
+     <div id="navigation">
+        
+        <div id="navigation_identifiant">
+            <font color="#FF1919">
+             Gunther Debay
+            </font>
+         </div>
+        
+        <div id="navigation_ancres">
+            <a href="#Acceuil">Présentation</a>
+            <a href="#competences">Compétences</a>
+            <a href="#contact">contact</a>
+            
+        </div>
+    </div>
+     
+     
+     <font color ="#BFBFBF">
+<div id="Presentation">
+   <div id="textePresentation">
+        <h1>+ A propos de moi</h1>
+        <br>
+        Je suis Günther Debay , web developpeur et ceci est mon CV
+   </div>
+   <div id="image_profil">
+    <img src="Images/Profil.jpg" >
+   </div>
+   <div id="tableau" >
+   <table>
+    <tr><td>Nom</td><td class="tdgauche">Debay Günther</td></tr>
+    <tr><td>Lieu de naissance</td><td class="tdgauche">Mons</td></tr>
+    <tr><td>Adresse</td><td class="tdgauche">Mons, Belgique</td></tr>
+    <tr><td><A HREF="mailto:gunther1st@hotmail.com">Mail</A></td><td class="tdgauche"><A HREF="mailto:gunther1st@hotmail.com">gunther1st@hotmail.com</A></td></tr>
+    <tr><td>Telephone</td><td class="tdgauche">+32496799878</td></tr>
+   </table>
+    </div>
+ </div>
+</font>
+     
+ 
+ <div id="competences" name="competences">
+        <div id="Projets" >
+            <font color="#FF7829">
+                <p>Ayant étudié a la HEH j'ai eu l'occasion de créer de nombreux projets , en voici quelques un : ( cliquer sur image pour visualiser )</p>
+                    <p>+ Mes premiéres expériences avec l'Html  </p>
+                    <div id="galerieHTML">
+                        <a class="fancybox"   rel="grouphtml" href="Images/ProjetHTML/html1er.PNG">
+                             <img src="Images/ProjetHTML/html1er.PNG">
+                        </a>
+                         <a class="fancybox" rel="grouphtml"  href="Images/ProjetHTML/hmtl1er2.PNG">
+                        </a>
+                          <a class="fancybox"   rel="grouphtml" href="Images/ProjetHTML/hmtl1er1.PNG">
+                        </a>
+                    </div>
+                    <p>+J'ai aussi eu l'occasion de travailler sur un projet en C#</p>
+                     <div id="galerieCSHARP">
+                        <a class="fancybox"   rel="ProjetCsharp" href="Images/ProjetCsharp/image1.PNG">
+                             <img src="Images/ProjetCsharp/image1.PNG">
+                        </a>
+                         <a class="fancybox" rel="ProjetCsharp"  href="Images/ProjetCsharp/image2.PNG">
+                        </a>
+                          <a class="fancybox"   rel="ProjetCsharp" href="Images/ProjetCsharp/image3.PNG">
+                        </a>
+                    </div>
+                    <p>+ Et même un projet en Java</p>
+                    <div id="galerieJAVA">
+                        <a class="fancybox"   rel="groupjava" href="Images/Projetjava/ImageMenu.PNG">
+                             <img src="Images/Projetjava/ImageMenu.PNG">
+                        </a>
+                         <a class="fancybox" rel="groupjava"  href="Images/Projetjava/ImagePacman.PNG">
+                        </a>
+                          <a class="fancybox"   rel="groupjava" href="Images/Projetjava/ImageSnake.PNG">
+                        </a>
+                    </div>
+                
+        </div>
+                    
+                        <div id="prerequis">
+                           <p> Tous ces projets m'ont permis d'en apprendre beaucoup sur divers sujets , voici la maniére dont je me noterai sur ces différents "sujets"</p>
+                           <p> Developpement WEB :</p>
+                           <div class="englobant"> <div id="barre1">HTML</div></br></div>
+                            <div class="englobant"> <div id="barre2">JavaScript</div></br></div>
+                            <p>Programmation :</p>
+                            <div class="englobant">  <div id="barre3">C</div></br></div>
+                             <div class="englobant"> <div id="barre4">C#</div></br></div>
+                             <div class="englobant"> <div id="barre5">Java</div></br></div>
+                            <p>Langues parlées :</p>
+                            <div class="englobant">  <div id="barre6">Français</div></br></div>
+                            <div class="englobant">  <div id="barre7">Anglais</div></br></div>
+                             <div class="englobant"> <div id="barre8">Neerlandais</div></br></div>
+                        </div>
+
+                   
+
+            </font>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ <div id="contact">
+<font color="#B23000">
+        <div id="contactChamps">
+            <p>+CONTACT</p>
+            <p>Si mon profil vous intéresse</br> , contactez moi via ces trois champs</p>
+                <form>
+                    Nom<br>
+                    <input type="text" name="firstname">
+                    <br><br>
+                    Mail<br>
+                    <input type="text" name="lastname">
+                    <br><br>
+                    Message<br>
+                    <textarea rows="8" cols="50" style="resize: none;" >
+                    </textarea>
+                    </br>
+                    <input type="submit" value="Envoyer Mail">
+                </form>
+     </div>
+</br>
+    
+    <div id="sociaux">
+       Ou alors en cliquant sur mon :</br></br>
+       <div id="fb">Facebook</br><a href="https://www.facebook.com/gunther.debay?fref=ts" TARGET="_blank"><img src="Images/facebook.png" class="imageSociaux"></a></div>
+       <div id="twitter"> Twitter</br><a href="https://twitter.com/wolfi1st" TARGET="_blank"><img src="Images/twitter.jpg" class="imageSociaux"></br></a></div></br>
+      <img id="image1">
+    </div>
+ </div>
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</font>
+</body>
+</html>
